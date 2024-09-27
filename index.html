@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Webhook</title>
+
+    <!-- Styles pour la mise en page et la réactivité -->
+    <style>
+        body {
+            max-width: 100vw;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            background-image: url('maquetteTest.jpg'); /* Chemin de l'image */
+            background-size: cover; /* Pour couvrir toute la page */
+            background-position: center; /* Centrer l'image */
+            background-repeat: no-repeat; /* Ne pas répéter l'image */
+        }
+
+        h1, p {
+            margin: 0 10px;
+            text-align: center;
+            color: white; /* Couleur du texte pour contraster avec l'image */
+        }
+
+        img.logo {
+            display: block;
+            width: 400px; /* Largeur fixe ou max-width pour ajuster */
+            height: auto; /* Maintenir le ratio d'aspect */
+            margin: 20px auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <!-- Script pour l'exécution du webhook -->
+    <script type="text/javascript">
+    window.onload = function() {
+        fetch("http://192.168.100.186:8123/api/webhook/-BGbrw4iCLRjF4CuBUh4sBzkV", { 
+            method: "POST"
+        })
+      
+        .catch(error => {
+            alert("Erreur lors de l'envoi du webhook. Détails : " + error.message);
+        });
+      }
+    </script>
+</head>
+
+<body>
+    <h1 style="color: green">BIENVENUE</h1>
+    <p style="color: black;">La climatisation a été togglée avec succès.</p>
+    <p style="color: green; font-size: 28px;"><strong>Protégeons la planète, chaque geste compte pour un avenir durable.</strong></p>
+
+    <!-- Chemin de l'image, remplacez 'assets' par le bon chemin si nécessaire -->
+    <img class="logo" src="logo_Enoleo_Vectoriel.png" alt="Logo de votre entreprise">
+</body>
+</html>
+
